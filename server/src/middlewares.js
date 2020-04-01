@@ -6,7 +6,8 @@ const redis = require("redis");
 const { RateLimiterRedis } = require("rate-limiter-flexible");
 
 const redisClient = redis.createClient({
-  enable_offline_queue: false
+  enable_offline_queue: false,
+  password: "Redis2019!"
 });
 
 const rateLimiter = new RateLimiterRedis({
@@ -26,7 +27,7 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.use("/public", express.static(`${process.cwd()}/public`));
+app.use(express.static(`${process.cwd()}/public`));
 
 app.use(helmet());
 app.use(cors());

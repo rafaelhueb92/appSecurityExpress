@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "SET PORT=4000 && node src"
+    "start": "PORT=4000 && nodemon src"
   },
   "dependencies": {
     "cors": "^2.8.5",
